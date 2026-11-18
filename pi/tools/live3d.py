@@ -9,7 +9,7 @@ Orientation comes from a Mahony filter (gyro + accel). There is no magnetometer,
 Usage (from pi/):
     python3 tools/live3d.py /dev/cu.usbmodem11201 --usb      (Pico USB port, hex frame lines)
     python3 tools/live3d.py /dev/cu.usbserial-XXXX           (FTDI on Pico GP4, raw frames)
-    python3 tools/live3d.py --file data/run_s2.bin          (replay a capture)
+    python3 tools/live3d.py --file ../data/logs/run_s2.bin          (replay a capture)
     python3 tools/live3d.py PORT --axis z                    (track the z axis instead of x)
 """
 import argparse

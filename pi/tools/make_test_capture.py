@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Write a fake Pico capture (frames + noise + one corrupted frame + one gap) for read_frames.py.
 
-Usage (from pi/):  python3 tools/make_test_capture.py test_capture.bin
+Usage (from pi/):  python3 tools/make_test_capture.py ../data/logs/test_capture.bin
 """
 import sys
 from pathlib import Path
@@ -29,5 +29,5 @@ for seq in range(0xFFF0, 0xFFF0 + 40):
         raw[10] ^= 0xFF
     out += raw
 out += b"\xAA"
-Path(sys.argv[1] if len(sys.argv) > 1 else "test_capture.bin").write_bytes(out)
+Path(sys.argv[1] if len(sys.argv) > 1 else "../data/logs/test_capture.bin").write_bytes(out)
 print("wrote", len(out), "bytes")

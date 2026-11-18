@@ -9,11 +9,11 @@ Angles come from a fake swim path (each tag swims lengths in its own lane) run
 through swimtrack.geometry, rounded to whole degrees with noise added.
 
 Usage (from pi/):
-    python3 tools/sim.py data/session7.bin
-    python3 tools/sim.py data/session7.bin data/run_s2.bin --speed 4
-    python3 tools/sim.py data/session7.bin --drop 0.1 --dup 0.1 --corrupt 0.02 > sim.txt
-    python3 tools/sim.py data/session7.bin | python3 -m swimtrack.main -
-    python3 tools/sim.py data/session7.bin --config config.yaml | python3 -m swimtrack.main - --config config.yaml
+    python3 tools/sim.py ../data/session7.bin
+    python3 tools/sim.py ../data/session7.bin ../data/logs/run_s2.bin --speed 4
+    python3 tools/sim.py ../data/session7.bin --drop 0.1 --dup 0.1 --corrupt 0.02 > sim.txt
+    python3 tools/sim.py ../data/session7.bin | python3 -m swimtrack.main -
+    python3 tools/sim.py ../data/session7.bin --config config.yaml | python3 -m swimtrack.main - --config config.yaml
 """
 import argparse
 import heapq

@@ -2,10 +2,10 @@
 """Pull the flash log off the Pico (wearable_pico firmware), one .bin file per power-on session.
 
 Usage (from pi/), Pico on USB:
-    python3 tools/dump_log.py /dev/cu.usbmodem21201 run         -> run_s1.bin, run_s2.bin, ...
+    python3 tools/dump_log.py /dev/cu.usbmodem21201 ../data/logs/run       -> ../data/logs/run_s1.bin, ...
     python3 tools/dump_log.py /dev/cu.usbmodem21201 --info
     python3 tools/dump_log.py /dev/cu.usbmodem21201 --erase
-Then:  python3 tools/read_frames.py --file run_s1.bin
+Then:  python3 tools/read_frames.py --file ../data/logs/run_s1.bin
 """
 import argparse
 import sys

@@ -2,9 +2,9 @@
 """Plot the motion recorded in a .bin capture: accel, gyro, and estimated orientation.
 
 Usage (from pi/):
-    python3 tools/plot_motion.py data/run_s2.bin
-    python3 tools/plot_motion.py data/run_s2.bin --save run_s2.png
-For an animated 3D replay of the same file:  python3 tools/live3d.py --file data/run_s2.bin
+    python3 tools/plot_motion.py ../data/logs/run_s2.bin
+    python3 tools/plot_motion.py ../data/logs/run_s2.bin --save run_s2.png
+For an animated 3D replay of the same file:  python3 tools/live3d.py --file ../data/logs/run_s2.bin
 """
 import argparse
 import sys

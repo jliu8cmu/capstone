@@ -19,3 +19,9 @@ wearable/test_stress
 
 # echo_bot has its own git repo; kept separate
 echo_bot/
+
+# On the Pi: its venv is "venv", and the pipeline service writes raw logs to logs/
+venv/
+logs/
+# ...but keep the committed recordings in data/logs/
+!data/logs/
