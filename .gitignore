@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Build output (regenerate with cmake / make)
+wearable/pico/build/
+echo_bot/build/
+wearable/test_core
+wearable/test_stress
+*.o
+
+# macOS / editors
+.DS_Store
+.vscode/*
+!.vscode/settings.json
+*.dSYM/
+
+# echo_bot has its own git repo; kept separate
+echo_bot/

@@ -1,0 +1,31 @@
+# Pool-side settings for swimtrack.main. Edit at the pool; no code changes needed.
+# Distances in metres, angles in degrees. Pool frame: origin at a corner,
+# x along the lanes, y across them, z up, water surface at z = 0.
+
+uplink_url: ws://127.0.0.1:8000/ws/pool/1/
+
+pool:
+  length: 25.0
+  lane_width: 2.13
+  lanes: 8
+
+anchor:
+  x: 0.0            # anchor position (here: middle of the near end wall)
+  y: 8.52
+  height: 2.5       # antenna height above the water
+  yaw_deg: 0.0      # 0 = facing straight down the pool (+x)
+  tilt_deg: 15.0    # tilted down from horizontal
+  az_sign: 1.0      # set to -1.0 if left/right come out mirrored
+  el_sign: 1.0
+  az_offset_deg: 0.0
+  el_offset_deg: 0.0
+
+filters:
+  min_rssi: -85
+
+ekf:
+  accel_std: 2.0
+  angle_std_deg: 1.5
+
+strokes:
+  cutoff_hz: 0.8

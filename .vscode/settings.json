@@ -1,0 +1,8 @@
+{
+    "nrf-connect.applications": [
+        "${workspaceFolder}/echo_bot"
+    ],
+    "cmake.sourceDirectory": "/Users/jeffrey/Documents/School/Capstone/echo_bot",
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "python.terminal.activateEnvironment": true
+}
