@@ -1,0 +1,15 @@
+# Coach dashboard (Django + Channels). Install: see setup steps.
+[Unit]
+Description=Swim tracker dashboard
+After=network.target
+
+[Service]
+User=swimpi
+WorkingDirectory=/home/swimpi/18500_Webapp_TimeTracker
+ExecStart=/home/swimpi/18500_Webapp_TimeTracker/venv/bin/python manage.py runserver 0.0.0.0:8000 --noreload
+Restart=always
+RestartSec=3
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

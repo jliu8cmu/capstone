@@ -1,0 +1,17 @@
+# Anchor serial -> strokes/position -> dashboard. Settings come from pi/config.yaml.
+[Unit]
+Description=Swim tracker pipeline
+After=swim-web.service
+Wants=swim-web.service
+
+[Service]
+User=swimpi
+WorkingDirectory=/home/swimpi/Capstone/pi
+ExecStart=/home/swimpi/Capstone/pi/venv/bin/python -m swimtrack.main /dev/ttyUSB0 --config config.yaml --log /home/swimpi/Capstone/logs/raw.txt
+# Keeps retrying every 5 s until the FTDI/anchor is plugged in.
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
