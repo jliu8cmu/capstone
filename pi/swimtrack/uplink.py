@@ -10,7 +10,7 @@ from websockets.sync.client import connect
 
 def build_message(tag: str, seq: int, timestamp: float, x: float, y: float, speed: float,
                   lane: Optional[int], stroke_count: int, stroke_rate: Optional[float],
-                  accel_g: Sequence[float], gyro_dps: Sequence[float]) -> dict:
+                  accel_g: Sequence[float], gyro_dps: Sequence[float], lap: Optional[int] = None) -> dict:
     """One telemetry_packet in the format of the web app's mock_telemetry_generator."""
     data = {
         "tag_id": tag,
@@ -28,6 +28,8 @@ def build_message(tag: str, seq: int, timestamp: float, x: float, y: float, spee
     }
     if lane is not None:
         data["lane"] = lane
+    if lap is not None:
+        data["lap_number"] = lap
     return {"type": "telemetry_packet", "data": data}
 
 class Uplink:

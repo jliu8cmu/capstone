@@ -94,6 +94,14 @@ class StrokeDetector:
     def count(self) -> int:
         return len(self.events)
 
+
+    def discard_between(self, t0_ms:float, t1_ms: float) -> int:
+        keep = [e for e in self.events if not t0_ms <= e.t_ms <= t1_ms]
+        removed = len(self.events) - len(keep)
+        self.events = keep
+        return removed
+    
+
     def rate_spm(self, now_ms: float) -> Optional[float]:
         if (len(self.events) < 2) or (now_ms - self.events[-1].t_ms > self.cfg.stale_s * 1000):
             return None

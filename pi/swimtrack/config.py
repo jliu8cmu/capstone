@@ -9,6 +9,8 @@ from swimtrack.filters import FilterConfig
 from swimtrack.geometry import AnchorConfig, PoolConfig
 from swimtrack.strokes import StrokeConfig
 
+from swimtrack.walls import WallConfig
+
 from dataclasses import dataclass, field, fields, replace
 
 def default_anchor() -> AnchorConfig:
@@ -22,10 +24,12 @@ class Settings:
     ekf: EkfConfig = field(default_factory=EkfConfig)
     strokes: StrokeConfig = field(default_factory=StrokeConfig)
     uplink_url: Optional[str] = None
+    walls: WallConfig = field(default_factory = WallConfig)
+
 
 
 SECTIONS = {"pool": PoolConfig, "anchor": AnchorConfig, "filters": FilterConfig,
-            "ekf": EkfConfig, "strokes": StrokeConfig}
+            "ekf": EkfConfig, "strokes": StrokeConfig, "walls": WallConfig}
 
 
 def _build(default, values: dict, section: str):
